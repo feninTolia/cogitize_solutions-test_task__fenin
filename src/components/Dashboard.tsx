@@ -1,5 +1,5 @@
 'use client';
-import { Tabs } from '@/shared/libs/constants';
+import { Tabs } from '@/shared/lib/constants';
 import React, { useState } from 'react';
 import TabControls from './TabControls';
 import TabsPage from './Tabs/Tabs';

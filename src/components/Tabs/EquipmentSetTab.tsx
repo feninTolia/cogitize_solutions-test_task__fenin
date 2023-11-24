@@ -1,4 +1,4 @@
-import { Tabs } from '@/shared/libs/constants';
+import { Tabs } from '@/shared/lib/constants';
 import React from 'react';
 
 const EquipmentSetTab = () => {

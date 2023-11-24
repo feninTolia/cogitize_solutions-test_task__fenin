@@ -10,8 +10,8 @@
   --secondary-black: #303038;
   --main-gray: #6b6b7b;
   --main-yellow: #efb62b;
-  --main-border-clr: rgba(255, 255, 255, 0.08);
-  --bg-border-clr: #292930;
+  --main-purple: #6764f1;
+  --main-border-clr: #ffffff14;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,6 +34,74 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.primary-button {
+  width: 100%;
+  padding-block: 1.4em;
+  background-color: var(--main-purple);
+  box-shadow: 0px 4px 40px 0px rgba(104, 102, 234, 0.24);
+  border-radius: 0.8em;
+  border: 2px solid var(--white-16, rgba(245, 245, 245, 0.16));
+  transition: all 150ms;
+
+  &:hover {
+    filter: brightness(110%);
+  }
+}
+
+.tab-button {
+  width: 25.4em;
+  padding-block: 1.2em;
+  border: 2px solid var(--main-border-clr);
+  border-top-right-radius: 0.8em;
+  border-top-left-radius: 0.8em;
+
+  background-color: var(--main-black);
+  margin-left: -1.2em;
+  transition: all 150ms;
+}
+
+.tab-button--selected {
+  position: relative;
+  isolation: isolate;
+  z-index: 20;
+  box-shadow: 0px 4px 8px 0px rgba(103, 100, 241, 0.16) inset;
+
+  &::after {
+    position: absolute;
+    bottom: -3px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: var(--main-black);
+  }
+}
+
+.dotted-bg {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -1.6em;
+    top: 0;
+    translate: -100% 50%;
+
+    background: url('../../public/dots.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    width: 1.2em;
+    height: 2em;
+  }
+}
+
+.box-shadow-border {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px,
+    var(--main-purple) 0px 0px 0px 2px inset;
 }
 
 .main-border {

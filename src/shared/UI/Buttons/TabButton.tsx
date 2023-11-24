@@ -1,18 +1,22 @@
 import React from 'react';
-import Button from './Button';
-import { ITabButton } from '@/shared/libs/types';
+import { ITabButton } from '@/shared/lib/types';
 
-const TabButton = ({ className, selectedTab, title, ...attr }: ITabButton) => {
+const TabButton = ({
+  titleFontSize = 'text-[1.4em]',
+  className = '',
+  selectedTab,
+  title,
+  ...attr
+}: ITabButton) => {
   return (
-    <Button
-      title={title}
+    <button
       type="button"
-      className={` w-[25.4em] py-[1.2em] border-x-2 border-t-2 border-[var(--main-border-clr)] rounded-t-[0.8em] border-b-2  bg-[var(--main-black)] ml-[-1.2em] transition-all ${
-        selectedTab === title &&
-        ' isolate z-10 shadow-[0px_4px_8px_0px_rgba(103,100,241,0.16)_inset] border-b-[var(--bg-border-clr)]'
-      } ${className}`}
+      className={` tab-button 
+      ${selectedTab === title ? 'tab-button--selected ' : ''} `}
       {...attr}
-    />
+    >
+      <span className={titleFontSize}>{title}</span>
+    </button>
   );
 };
 

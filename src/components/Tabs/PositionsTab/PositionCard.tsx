@@ -5,15 +5,27 @@ interface IProps {
   level: number;
   payment: number;
   tasks: number;
+  onClick: () => void;
+  className?: string;
 }
 
-const PositionCard = ({ name, level, payment, tasks }: IProps) => {
+const PositionCard = ({
+  className = '',
+  onClick,
+  name,
+  level,
+  payment,
+  tasks,
+}: IProps) => {
   return (
-    <div className=" flex justify-between items-start bg-[var(--secondary-black)] w-full pl-[4.4em] pr-[1.6em] pt-[2.2em] pb-[1.8em] rounded-[0.8em]">
-      <div className="flex flex-col gap-[0.2em]">
+    <li
+      onClick={onClick}
+      className={`flex  justify-between  items-start bg-[var(--secondary-black)] w-full pl-[4.4em] pr-[1.6em] pt-[2.2em] pb-[1.8em] rounded-[0.8em] ${className}`}
+    >
+      <div className="flex flex-col gap-[0.2em] dotted-bg">
         <span className=" text-[1.4em] font-semibold">{name}</span>
         <span className=" text-[1.2em] font-semibold text-[var(--main-gray)]">
-          {tasks} заданий
+          {level < 10 ? 'от 10 lvl' : `${tasks} заданий`}
         </span>
       </div>
 
@@ -23,7 +35,7 @@ const PositionCard = ({ name, level, payment, tasks }: IProps) => {
         </span>{' '}
         / час
       </span>
-    </div>
+    </li>
   );
 };
 

@@ -1,24 +1,40 @@
 import React from 'react';
 import PositionCard from './PositionCard';
+import Button from '@/shared/UI/Buttons/Button';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@/store';
+import {
+  addPosition,
+  setSelectedPosition,
+} from '@/store/positions/positionsSlice';
 
-interface IPosition {
-  id: string;
-  name: string;
-  level: number;
-  payment: number;
-  tasks: number;
-}
 const PositionsList = () => {
-  const positions: IPosition[] = [
-    { id: '1', name: 'Новобранец', level: 0, payment: 50, tasks: 0 },
-    { id: '2', name: 'Рядовой', level: 10, payment: 80, tasks: 5 },
-  ];
+  const positions = useSelector(
+    (state: RootState) => state.positions.positions
+  );
+  const selectedPosition = useSelector(
+    (state: RootState) => state.positions.selectedPosition
+  );
+  const dispatch = useDispatch();
 
   return (
-    <div className=" w-[29.6em] bg-black flex flex-col gap-[2em]">
-      {positions.map((position) => (
-        <PositionCard key={position.id} {...position} />
-      ))}
+    <div className=" w-[29.6em] flex flex-col  justify-between pb-[1.6em]">
+      <ul className=" flex flex-col gap-[2em] overflow-scroll mb-[1.6em]">
+        {positions.map((position) => (
+          <PositionCard
+            key={position.id}
+            {...position}
+            onClick={() => dispatch(setSelectedPosition(position))}
+            className={
+              selectedPosition?.id === position.id ? ' box-shadow-border' : ''
+            }
+          />
+        ))}
+      </ul>
+      <Button
+        title="Создать новую должность"
+        onClick={() => dispatch(addPosition())}
+      />
     </div>
   );
 };

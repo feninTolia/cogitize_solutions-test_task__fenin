@@ -1,6 +1,5 @@
-import Button from '@/shared/UI/Buttons/Button';
 import TabButton from '@/shared/UI/Buttons/TabButton';
-import { Tabs } from '@/shared/libs/constants';
+import { Tabs } from '@/shared/lib/constants';
 import React from 'react';
 
 interface IProps {
@@ -15,7 +14,7 @@ const TabControls = ({ selectedTab, setSelectedTab }: IProps) => {
         title={Tabs.Hierarchy}
         selectedTab={selectedTab}
         onClick={() => setSelectedTab(Tabs.Hierarchy)}
-        className="ml-[0em]"
+        style={{ marginLeft: 0 }}
       />
       <TabButton
         title={Tabs.Positions}
