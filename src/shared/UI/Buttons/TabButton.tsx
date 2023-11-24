@@ -1,11 +1,6 @@
-import React, { ButtonHTMLAttributes } from 'react';
+import React from 'react';
 import Button from './Button';
-import { Tabs } from '@/shared/libs/constants';
-
-interface ITabButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-  title: Tabs;
-  selectedTab: Tabs;
-}
+import { ITabButton } from '@/shared/libs/types';
 
 const TabButton = ({ className, selectedTab, title, ...attr }: ITabButton) => {
   return (

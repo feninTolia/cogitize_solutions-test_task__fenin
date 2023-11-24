@@ -1,9 +1,5 @@
-import React, { ButtonHTMLAttributes } from 'react';
-
-interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-  title: string;
-  titleFontSize?: string;
-}
+import { IButton } from '@/shared/libs/types';
+import React from 'react';
 
 const Button = ({
   title,
