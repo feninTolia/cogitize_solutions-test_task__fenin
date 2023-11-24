@@ -8,6 +8,8 @@
   --background-end-rgb: 255, 255, 255;
   --main-black: #292930;
   --secondary-black: #303038;
+  --main-gray: #6b6b7b;
+  --main-yellow: #efb62b;
   --main-border-clr: rgba(255, 255, 255, 0.08);
   --bg-border-clr: #292930;
 }

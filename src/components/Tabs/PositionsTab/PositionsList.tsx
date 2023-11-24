@@ -15,7 +15,7 @@ const PositionsList = () => {
   ];
 
   return (
-    <div className=" w-[29.6em] bg-black ">
+    <div className=" w-[29.6em] bg-black flex flex-col gap-[2em]">
       {positions.map((position) => (
         <PositionCard key={position.id} {...position} />
       ))}
