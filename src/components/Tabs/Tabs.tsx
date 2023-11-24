@@ -1,9 +1,9 @@
 import { Tabs } from '@/shared/libs/constants';
 import React from 'react';
-import PositionsTab from './PositionsTab';
 import StaffListTab from './StaffListTab';
 import HierarchyTab from './HierarchyTab';
 import EquipmentSetTab from './EquipmentSetTab';
+import PositionsTab from './PositionsTab/PositionsTab';
 
 interface IProps {
   selectedTab: Tabs;
