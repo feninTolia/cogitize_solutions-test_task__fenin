@@ -6,6 +6,9 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --main-black: #292930;
+  --main-border-clr: rgba(255, 255, 255, 0.08);
+  --bg-border-clr: #292930;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,6 +19,10 @@
   }
 }
 
+html {
+  font-size: 0.625rem;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,4 +31,12 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.main-border {
+  @apply border-2 border-[var(--main-border-clr)];
+}
+
+.tabs-buttons-border {
+  @apply border-x-2 border-t-2 border-[var(--main-border-clr)] rounded-t-[0.8em];
 }
