@@ -8,6 +8,9 @@ import { RootState } from '@/store';
 import { editPosition } from '@/store/positions/positionsSlice';
 import React, { FormEvent, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import toast, { Toaster } from 'react-hot-toast';
+
+const notify = () => toast.success('Cохранено!');
 
 const PositionsForm = () => {
   // @ts-ignore
@@ -26,6 +29,7 @@ const PositionsForm = () => {
     e.preventDefault();
     if (!editedPosition) return;
     dispatch(editPosition(editedPosition));
+    notify();
   };
 
   if (!selectedPosition || !editedPosition) {
@@ -110,6 +114,7 @@ const PositionsForm = () => {
 
         <Button type="submit" title="Сохранить" />
       </form>
+      <Toaster />
     </div>
   );
 };

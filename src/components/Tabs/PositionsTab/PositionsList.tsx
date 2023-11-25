@@ -36,8 +36,6 @@ const PositionsList = () => {
     ));
   }
 
-  console.log('positions', positions);
-
   return (
     <div className=" w-[29.6em] flex flex-col  justify-between pb-[1.6em]">
       <ul className=" flex flex-col gap-[2em] overflow-scroll mb-[1.6em]">
