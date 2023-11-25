@@ -13,7 +13,8 @@ const Input = ({ value, setEditedPosition }: IProps) => {
         Название
       </span>
       <input
-        className="text-semibold px-[1.1em] py-[1em] text-[1.4em] main-border  rounded-[0.8em] bg-transparent"
+        style={{ paddingInline: '1.1em' }}
+        className="text-semibold  py-[1em] text-[1.4em] main-border  rounded-[0.8em] bg-[var(--main-black)]"
         type="text"
         value={value}
         onChange={(e) =>

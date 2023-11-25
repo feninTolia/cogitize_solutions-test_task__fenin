@@ -48,7 +48,7 @@ const PositionsForm = () => {
           <p className=" w-full pl-[1.2em] py-[1em] text-[1.4em] text-[var(--main-gray)] shadow-[0px_4px_16px_0px_rgba(0,0,0,0.24)]">
             Обязаности
           </p>
-          <div className=" grid grid-cols-2 gap-12 p-[1.2em]">
+          <div className=" grid grid-cols-2 gap-[1.2em] p-[1.2em]">
             <CheckboxGroup title="Торговля">
               <Checkbox
                 checkboxName={CheckboxNames.sellProducts}

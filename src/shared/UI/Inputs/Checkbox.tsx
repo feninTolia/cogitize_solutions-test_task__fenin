@@ -9,22 +9,31 @@ interface IProps {
 }
 
 const Checkbox = ({ checkboxName, checked, setEditedPosition }: IProps) => {
-  const handleChange = () => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEditedPosition((prevState) => {
       return {
         ...prevState,
         dutiesCheckbox: {
           ...prevState.dutiesCheckbox,
-          [checkboxName]: true,
+          [checkboxName]: e.target.checked,
         },
       };
     });
   };
 
   return (
-    <label>
-      <input type="checkbox" checked={checked} onChange={handleChange} />
-      <span className=" text-[1.2em]">{CheckboxTitles[checkboxName]}</span>
+    <label className="custom-checkbox">
+      <input
+        className="checkbox"
+        type="checkbox"
+        checked={checked}
+        onChange={handleChange}
+      />
+      <span className="checkmark"></span>
+
+      <span className=" text-[1.2em] font-medium">
+        {CheckboxTitles[checkboxName]}
+      </span>
     </label>
   );
 };

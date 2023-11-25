@@ -36,6 +36,14 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.main-border {
+  @apply border-2 border-[var(--main-border-clr)];
+}
+
+.tabs-buttons-border {
+  @apply border-x-2 border-t-2 border-[var(--main-border-clr)] rounded-t-[0.8em];
+}
+
 .primary-button {
   width: 100%;
   padding-block: 1.4em;
@@ -104,10 +112,39 @@ body {
     var(--main-purple) 0px 0px 0px 2px inset;
 }
 
-.main-border {
-  @apply border-2 border-[var(--main-border-clr)];
+.custom-checkbox input {
+  display: none;
 }
 
-.tabs-buttons-border {
-  @apply border-x-2 border-t-2 border-[var(--main-border-clr)] rounded-t-[0.8em];
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.custom-checkbox .checkmark {
+  width: 2.4em;
+  height: 2.4em;
+  border: 0.2em solid rgba(245, 245, 245, 0.08);
+  border-radius: 0.4em;
+  margin-right: 1em;
+  display: inline-block;
+  position: relative;
+}
+
+.custom-checkbox input:checked + .checkmark::before {
+  content: ' ';
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 2.4em;
+  height: 2.4em;
+
+  border: 0.2em solid var(--main-purple);
+  border-radius: 0.4em;
+
+  background-image: url('../../public/check.svg');
 }

@@ -6,9 +6,11 @@ interface IProps extends PropsWithChildren {
 
 const CheckboxGroup = ({ children, title }: IProps) => {
   return (
-    <div className=" flex flex-col gap-6">
+    <div className=" flex flex-col " style={{ gap: '0.4em' }}>
       <span className="text-[1.2em] text-[var(--main-gray)]">{title}</span>
-      {children}
+      <div className=" flex flex-col" style={{ gap: '1em' }}>
+        {children}
+      </div>
     </div>
   );
 };
