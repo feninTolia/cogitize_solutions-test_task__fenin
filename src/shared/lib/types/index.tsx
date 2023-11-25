@@ -18,5 +18,15 @@ export interface IPosition {
   level: number;
   payment: number;
   tasks: number;
-  duties: [];
+  dutiesCheckbox: {
+    sellProducts: boolean;
+    quotePrices: boolean;
+    viewAnalytics: boolean;
+    duel: boolean;
+    makeClaims: boolean;
+    purchaseRawMaterials: boolean;
+    assignWorkers: boolean;
+    assignPositions: boolean;
+    kickOutOfTheGang: boolean;
+  };
 }

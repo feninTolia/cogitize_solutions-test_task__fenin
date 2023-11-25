@@ -23,7 +23,9 @@ const PositionCard = ({
       className={`flex  justify-between  items-start bg-[var(--secondary-black)] w-full pl-[4.4em] pr-[1.6em] pt-[2.2em] pb-[1.8em] rounded-[0.8em] ${className}`}
     >
       <div className="flex flex-col gap-[0.2em] dotted-bg">
-        <span className=" text-[1.4em] font-semibold">{name}</span>
+        <span className=" text-[1.4em] font-semibold overflow-hidden w-[11em] text-ellipsis">
+          {name}
+        </span>
         <span className=" text-[1.2em] font-semibold text-[var(--main-gray)]">
           {level < 10 ? 'от 10 lvl' : `${tasks} заданий`}
         </span>

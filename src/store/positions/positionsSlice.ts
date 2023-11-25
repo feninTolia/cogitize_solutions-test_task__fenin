@@ -14,16 +14,53 @@ const initialState: {
       level: 0,
       payment: 50,
       tasks: 0,
-      duties: [],
+      dutiesCheckbox: {
+        sellProducts: false,
+        quotePrices: false,
+        viewAnalytics: false,
+        duel: false,
+        makeClaims: false,
+        purchaseRawMaterials: false,
+        assignWorkers: false,
+        assignPositions: false,
+        kickOutOfTheGang: false,
+      },
     },
-    { id: '2', name: 'Рядовой', level: 10, payment: 80, tasks: 5, duties: [] },
+    {
+      id: '2',
+      name: 'Рядовой',
+      level: 10,
+      payment: 80,
+      tasks: 5,
+      dutiesCheckbox: {
+        sellProducts: false,
+        quotePrices: false,
+        viewAnalytics: false,
+        duel: false,
+        makeClaims: false,
+        purchaseRawMaterials: false,
+        assignWorkers: false,
+        assignPositions: false,
+        kickOutOfTheGang: false,
+      },
+    },
     {
       id: '3',
       name: 'Сержант',
       level: 10,
       payment: 100,
       tasks: 10,
-      duties: [],
+      dutiesCheckbox: {
+        sellProducts: false,
+        quotePrices: false,
+        viewAnalytics: false,
+        duel: false,
+        makeClaims: false,
+        purchaseRawMaterials: false,
+        assignWorkers: false,
+        assignPositions: false,
+        kickOutOfTheGang: false,
+      },
     },
     {
       id: '4',
@@ -31,16 +68,53 @@ const initialState: {
       level: 0,
       payment: 50,
       tasks: 0,
-      duties: [],
+      dutiesCheckbox: {
+        sellProducts: false,
+        quotePrices: false,
+        viewAnalytics: false,
+        duel: false,
+        makeClaims: false,
+        purchaseRawMaterials: false,
+        assignWorkers: false,
+        assignPositions: false,
+        kickOutOfTheGang: false,
+      },
     },
-    { id: '5', name: 'Рядовой', level: 10, payment: 80, tasks: 5, duties: [] },
+    {
+      id: '5',
+      name: 'Рядовой',
+      level: 10,
+      payment: 80,
+      tasks: 5,
+      dutiesCheckbox: {
+        sellProducts: false,
+        quotePrices: false,
+        viewAnalytics: false,
+        duel: false,
+        makeClaims: false,
+        purchaseRawMaterials: false,
+        assignWorkers: false,
+        assignPositions: false,
+        kickOutOfTheGang: false,
+      },
+    },
     {
       id: '6',
       name: 'Сержант',
       level: 10,
       payment: 100,
       tasks: 10,
-      duties: [],
+      dutiesCheckbox: {
+        sellProducts: false,
+        quotePrices: false,
+        viewAnalytics: false,
+        duel: false,
+        makeClaims: false,
+        purchaseRawMaterials: false,
+        assignWorkers: false,
+        assignPositions: false,
+        kickOutOfTheGang: false,
+      },
     },
   ],
 };
@@ -56,11 +130,30 @@ export const counterSlice = createSlice({
         level: 0,
         payment: 50,
         tasks: 0,
-        duties: [],
+        dutiesCheckbox: {
+          sellProducts: false,
+          quotePrices: false,
+          viewAnalytics: false,
+          duel: false,
+          makeClaims: false,
+          purchaseRawMaterials: false,
+          assignWorkers: false,
+          assignPositions: false,
+          kickOutOfTheGang: false,
+        },
       });
     },
-    editPosition: (state, action: PayloadAction<number>) => {
-      //   state.value += action.payload;
+
+    editPosition: (state, action: PayloadAction<IPosition>) => {
+      const updatedPositions = state.positions.map((position) => {
+        if (position.id === action.payload.id) {
+          return { ...position, ...action.payload };
+        }
+
+        return position;
+      });
+
+      state.positions = updatedPositions;
     },
     setSelectedPosition: (state, action: PayloadAction<IPosition>) => {
       state.selectedPosition = action.payload;
